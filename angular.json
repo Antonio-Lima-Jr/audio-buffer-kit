@@ -3,5 +3,41 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "audio-buffer": {
+      "projectType": "library",
+      "root": "projects/audio-buffer",
+      "sourceRoot": "projects/audio-buffer/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/audio-buffer/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/audio-buffer/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/audio-buffer/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/audio-buffer/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
   }
 }
