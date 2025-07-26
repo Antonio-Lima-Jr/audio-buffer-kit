@@ -7,7 +7,8 @@
     "build": "ng build",
     "build-lib": "ng build audio-buffer",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "release": "npm version prerelease --preid=beta"
   },
   "private": true,
   "dependencies": {
